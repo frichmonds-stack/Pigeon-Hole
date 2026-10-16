@@ -13,7 +13,7 @@ Last updated: 2026-08-17
 
 ## Brand
 
-- Site renamed **Pigeon Hole** (2026-07-15; was "AI for Teachers" / repo "AI Explore"). Bird-family link to owner's other product, Budgie. Nav/footer/titles/OG updated. Domain purchase, trademark/handle checks, and repo rename still open (BACKLOG).
+- Site renamed **Pigeon Hole** (2026-07-15; was "AI for Teachers" / repo "AI Explore"). Bird-family link to owner's other product, Budgie. Nav/footer/titles/OG updated. Repo and folder renamed to Pigeon-Hole / `Pigeon Hole` 2026-10-16. Domain purchase and trademark/handle checks still open (BACKLOG).
 
 ## What's live in the codebase
 

@@ -1,6 +1,6 @@
 # Owner Context
 
-How to work with this project's owner. Shared canon for any agent working in this repo — if this file and an agent's private memory disagree, this file wins. Ported and adapted 2026-07-13 from the more mature `Budget-Tool` repo (`ai/owner-context.md`), where the owner established these rules.
+How to work with this project's owner. Shared canon for any agent working in this repo — if this file and an agent's private memory disagree, this file wins. Ported and adapted 2026-07-13 from the more mature Budgie repo (then `Budget-Tool`) (`ai/owner-context.md`), where the owner established these rules.
 
 Scope note: this file holds owner-as-collaborator facts. Project purpose and audience belong in `project-context.md`; priorities in `BACKLOG.md`; workflow rules in `CLAUDE.md` / `close-out.md`.
 

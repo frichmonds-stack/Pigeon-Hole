@@ -1,11 +1,11 @@
 # Owner-Time Integration
 
-Run every command below from the Pigeon Hole (AI-Explore) repository root. AI Project Manager owns timing
+Run every command below from the Pigeon Hole repository root. AI Project Manager owns timing
 logic and persistence. Its canonical contract is
 `C:\Users\Rawr\Desktop\Codex Projects\AI Project Manager\docs\design\owner-time.md`.
 Both Codex and Claude follow this procedure; no timer implementation lives in this repo.
 
-After confirming the Pigeon Hole (AI-Explore) boundary and before substantive work on each meaningful
+After confirming the Pigeon Hole boundary and before substantive work on each meaningful
 owner-linked turn (including planning and resumed sessions), run:
 
 ```powershell

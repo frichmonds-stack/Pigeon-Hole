@@ -13,7 +13,7 @@ SITE_URL=https://<your-domain> npm run build   # -> frontend/dist/
 - **`public/og-default.png`** — add a 1200×630 share image (logo + tagline on the Lumen palette). Referenced by every page's `og:image`; until it exists the card shows title/description with no image.
 
 ## Cloudflare Pages — LIVE (since 2026-07-15)
-Project **`pigeon-hole`** → **https://pigeon-hole-87j.pages.dev** (plain `pigeon-hole.pages.dev` was taken). Connected to `frichmonds-stack/AI-Explore`.
+Project **`pigeon-hole`** → **https://pigeon-hole-87j.pages.dev** (plain `pigeon-hole.pages.dev` was taken). Connected to `frichmonds-stack/Pigeon-Hole` (renamed from `AI-Explore` 2026-10-16).
 
 Actual settings:
 - **Production branch:** `main` (work branches get preview deploys; publish = merge to `main` — see `close-out.md`)
