@@ -11,15 +11,22 @@ git status
 git log --oneline -5
 ```
 
+Then verify the Git root is exactly `E:/Projects/Pigeon Hole`.
+No startup fetch, pull, or other Git mutation. Load `ai/command-profile.json` and its central
+command contract; it owns command matching, modes and authority.
+Prototype execution is explicit opt-in for a named experiment/run and automation scope.
+
 Then:
 1. Read [`.claude/current-state.md`](.claude/current-state.md) — the present-tense project snapshot — and [`.claude/owner-context.md`](.claude/owner-context.md) — how to work with the owner.
 2. Route the task via [`.claude/task-map.md`](.claude/task-map.md) and read only what the task needs (it also holds the source-of-truth order when docs conflict).
-3. **Default to discussion/planning mode** and state your mode + edit authorisation up front. The command vocabulary (`Plan only` · `execute now` · `Normal Close` · `Publish Close` · `Commit` · `Push`) and close procedures live in [`.claude/close-out.md`](.claude/close-out.md). Vague approval is not authorisation.
+3. State mode and edit authorization from the central contract; use `.claude/close-out.md` for project steps.
 4. Before substantive work on each meaningful owner-linked turn, follow [`.claude/owner-time.md`](.claude/owner-time.md) to begin local project timing (Windows only; on the Mac, say timing was not recorded). Skip subagents, timer-only queries, and `time out` itself. Timing grants no edit authority.
 5. Before writing any planning/continuity doc, name its canonical destination from the routing table in `close-out.md` — one canonical file per fact, short pointers elsewhere, no duplication.
 
 ## Branch
-Work happens on `claude/amazing-carson-5zucgf`. **`main` = production** — Cloudflare Pages deploys it live (since 2026-07-15). Never push *directly* to `main`; publishing = merging the feature branch into `main` with explicit owner authorisation (`Publish Close` — see `close-out.md`). Why: the owner is non-technical and all code is AI-written, so the live branch only ever changes by a deliberate, named step — never as a side effect of session work.
+Work happens on `claude/amazing-carson-5zucgf`. `main` is production; Cloudflare Pages
+also creates preview deployments for work branches. Command authority follows the central
+contract; project steps live in `.claude/close-out.md` and `.claude/deploy.md`. No automatic merge.
 
 ## Dev Commands
 ```bash

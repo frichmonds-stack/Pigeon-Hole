@@ -2,20 +2,10 @@
 
 ## Mode Gate
 
-| Owner command | Allowed action |
-|---|---|
-| `Plan only` / discussion | Inspect, read, propose; no repo changes. |
-| `execute now` / "implement / fix / go ahead" | Implement the currently discussed batch; no commit or push. |
-| `Normal Close` | Checks + docs + continuity + final report; no commit or push. |
-| `Publish Close` | Normal Close work, then confidentiality pass, commit, push, **merge to `main` (deploys live)**, report. |
-| `Commit` / `Push` | Only that named git step, for approved completed work. |
-| `time out` | Follow `owner-time.md`. Stops owner timing only; no closeout or work-item change. |
+Load `../ai/command-profile.json` and its central machine-readable contract.
 
-Rules:
-- Default after session start is planning/discussion mode.
-- Vague approval (`ok`, `sounds good`, "what next?") is **not** implementation approval.
-- `execute now` covers only the currently discussed batch — no silent scope expansion.
-- If the owner just says "close out" without specifying, ask which close — don't assume Publish.
+Command authority, modes and matching are defined only by that central contract.
+Project steps: `execute-now.md`, this closeout procedure, `deploy-now.md` and `owner-time.md`.
 
 ## Close-out checklist (both modes)
 
@@ -84,31 +74,17 @@ Each row's page carries exactly three sections: **Description** (one to three se
 
 ## Publish Close only
 
-```bash
-# Stage specific files — never use git add -A blindly
-git add <files>
-
-# Commit — plain English, what changed and why
-git commit -m "descriptive message"
-
-# Push to feature branch
-git push -u origin claude/amazing-carson-5zucgf
-
-# Publish = merge to main (this is what deploys the live site)
-git checkout main && git pull origin main
-git merge claude/amazing-carson-5zucgf && git push origin main
-git checkout claude/amazing-carson-5zucgf
-```
-
-- **`main` = production** (Cloudflare Pages builds it; live at `pigeon-hole-87j.pages.dev`). Never push *directly* to `main` — it only changes via the merge step above, under an explicit `Publish Close`. Feature-branch pushes produce preview deploys only.
-- Rationale (recorded 2026-07-15): all code is AI-written and the owner is non-technical, so the live site must never change as a side effect — only by a deliberate, owner-named publish step.
-- **Confidentiality pass before commit:** no CEWA internal-sourced approval data, no internal wording, in anything staged or in `dist/` (see `owner-context.md` confidentiality gate).
-- If push fails with 403: retry up to 4 times with exponential backoff (2s, 4s, 8s, 16s).
-- Cloudflare Pages deploys from the branch — verify the deploy when the change should go live and timing allows (see `deploy.md`).
+Inspect staged and unstaged changes; scope only completed-batch files and preserve unrelated work.
+Complete confidentiality review: no CEWA internal approval data or wording in staged files/artifacts.
+Commit/tag only within the reviewed publication scope; an agreed remote/ref is required for push.
+`main` deploys production and work-branch pushes create Cloudflare Pages previews.
+Follow the central command contract for publication authority and report deployment status
+separately from Git publication. Never merge to production automatically.
+If a permitted push fails, report the failure and bounded retry evidence, never claim success.
 
 ## Owner time
 
-After a successful `execute now` batch (checks and docs included), or a successful `Publish Close` (push and merge included), run the matching completion hook in [`owner-time.md`](owner-time.md). Incomplete work preserves timer state.
+After a successful `execute now` batch (checks and docs included), or a successful `publish close` (authorized publication only), run the matching completion hook in [`owner-time.md`](owner-time.md). Incomplete work preserves timer state.
 
 ## Final report — every close
 
@@ -121,3 +97,5 @@ State explicitly:
 - assumptions, uncertainties, and manual review still needed
 
 **Never claim GitHub is updated or the site is live unless it was actually pushed and verified.** If not done, say exactly what remains.
+
+Publication/deployment authority and handling of unknown automatic triggers follow the central command contract.

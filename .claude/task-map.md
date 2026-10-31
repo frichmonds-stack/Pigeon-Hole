@@ -36,7 +36,7 @@ Route work to the smallest relevant set of files and docs. Don't read everything
 - Checks: none automated — the test of a criterion is whether it has a real face in every artefact type, and whether a reader could see from the artefact why it scored what it did.
 
 ### Deploy / publishing
-- Docs: `deploy.md` (Cloudflare Pages). Commit/push only per `close-out.md` authorisation.
+- Docs: `deploy.md` (Cloudflare Pages). Commit/push only per `close-out.md`; command authority follows the central contract; manual deployment steps are in `deploy-now.md`.
 
 ### Process / continuity docs
 - Files: `CLAUDE.md`, `.claude/*.md`

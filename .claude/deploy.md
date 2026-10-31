@@ -1,5 +1,9 @@
 # Deploy
 
+Execution requires owner `deploy now` for a specific reviewed artifact/ref and target.
+Read `deploy-now.md` for manual steps; the central command contract owns publication/deployment authority.
+Build instructions here are technical reference, not permission to implement or alter configuration.
+
 Static SPA (Vite build) + per-route pre-rendered HTML. Target host: **Cloudflare Pages** (free). Netlify/Vercel also supported.
 
 ## Build
@@ -16,7 +20,7 @@ SITE_URL=https://<your-domain> npm run build   # -> frontend/dist/
 Project **`pigeon-hole`** → **https://pigeon-hole-87j.pages.dev** (plain `pigeon-hole.pages.dev` was taken). Connected to `frichmonds-stack/Pigeon-Hole` (renamed from `AI-Explore` 2026-10-16).
 
 Actual settings:
-- **Production branch:** `main` (work branches get preview deploys; publish = merge to `main` — see `close-out.md`)
+- **Production branch:** `main` (work branches get preview deploys; command authority follows the central contract)
 - **Root directory:** `frontend` · **Build command:** `npm run build` · **Output directory:** `dist`
 - **Env var:** `SITE_URL = https://pigeon-hole-87j.pages.dev` (set by owner 2026-07-15; swap to custom domain at launch)
 - SPA fallback via `frontend/public/_redirects` (copied to `dist/`).

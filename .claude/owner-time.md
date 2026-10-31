@@ -2,14 +2,14 @@
 
 Run every command below from the Pigeon Hole repository root. AI Project Manager owns timing
 logic and persistence. Its canonical contract is
-`C:\Users\Rawr\Desktop\Codex Projects\AI Project Manager\docs\design\owner-time.md`.
+`E:\Projects\AI Project Manager\docs\design\owner-time.md`.
 Both Codex and Claude follow this procedure; no timer implementation lives in this repo.
 
 After confirming the Pigeon Hole boundary and before substantive work on each meaningful
 owner-linked turn (including planning and resumed sessions), run:
 
 ```powershell
-$env:PYTHONPATH = 'C:\Users\Rawr\Desktop\Codex Projects\AI Project Manager\src'
+$env:PYTHONPATH = 'E:\Projects\AI Project Manager\src'
 & 'C:\Users\Rawr\Desktop\Codex Projects\Budget Tool\.venv\Scripts\python.exe' -m ai_efficiency.cli time-activity --project-root . --harness <codex-or-claude-code> --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
 ```
 
@@ -27,14 +27,14 @@ not recorded for the session; never claim it was. Timing only records on the Win
 Owner `time out` runs only:
 
 ```powershell
-$env:PYTHONPATH = 'C:\Users\Rawr\Desktop\Codex Projects\AI Project Manager\src'
+$env:PYTHONPATH = 'E:\Projects\AI Project Manager\src'
 & 'C:\Users\Rawr\Desktop\Codex Projects\Budget Tool\.venv\Scripts\python.exe' -m ai_efficiency.cli time-out --project-root . --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
 ```
 
 After successful Execute Now completion (including checks and documentation), run:
 
 ```powershell
-$env:PYTHONPATH = 'C:\Users\Rawr\Desktop\Codex Projects\AI Project Manager\src'
+$env:PYTHONPATH = 'E:\Projects\AI Project Manager\src'
 & 'C:\Users\Rawr\Desktop\Codex Projects\Budget Tool\.venv\Scripts\python.exe' -m ai_efficiency.cli time-complete --project-root . --workflow execute-now --outcome completed --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
 ```
 
@@ -46,5 +46,4 @@ excluding the idle gap. `time out` changes no work-item state and performs no cl
 
 Use `time-status` or `time-report --period today|week|all` with the same project/database arguments
 to inspect estimates; `--utc-offset-minutes 480` selects Perth calendar days. Timing remains
-local, with no raw timing/session data sent to Notion. Publishing to `main` keeps its existing
-Publish Close boundary.
+local, with no raw timing/session data sent to Notion. Publication and deployment authority follow the central contract.
