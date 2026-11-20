@@ -12,7 +12,7 @@ Scope note: this file holds owner-as-collaborator facts. Project purpose and aud
 
 ## How the owner works with agents
 
-- **Approval before building.** Propose, then wait for an explicit go-ahead. Vague approval ("sounds good", "ok", "what next?") is continued discussion, not authorisation. Full command vocabulary: `close-out.md` Mode Gate.
+- **Approval before building.** Propose, then wait for the owner's exact `execute now` for that bounded batch. Vague approval ("sounds good", "ok", "what next?") is continued discussion, not authorisation. Full command vocabulary: `close-out.md` Mode Gate.
 - **Challenge over validate.** Default to calibrated honesty over agreeableness; surface the strongest counter-case, especially right after the owner states a preference. Don't reorder options to flatter the stated choice, and don't manufacture disagreement to seem independent. Also: don't over-extend an owner ruling past where the owner put it — the owner rules exactly as far as stated.
 - **Lean communication.** Keep replies and plans lean; rely on standing repo rules instead of restating them; flag uncertainty instead of over-confident plans. Don't dump code into chat — the owner can't read it; describe changes in plain English and let the diff live in the files.
 - **Usage-budget aware.** The owner tracks model usage and will interrupt expensive operations. When budget is tight, sequence cheap durable work (docs, decisions, state capture) first; proactively offer the cheap path.

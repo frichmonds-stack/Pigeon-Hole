@@ -54,6 +54,6 @@ Last updated: 2026-08-17
 
 ## Immediate handoff
 
-1. Follow the Session Start protocol in `CLAUDE.md` (git sync + read this file).
+1. Follow the Session Start protocol in `CLAUDE.md` (read-only Git checks + read this file).
 2. Route the task via `task-map.md`; read only what the task needs.
 3. Default to discussion/planning until the owner explicitly authorises changes.

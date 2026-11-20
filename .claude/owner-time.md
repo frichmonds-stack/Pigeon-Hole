@@ -10,7 +10,7 @@ owner-linked turn (including planning and resumed sessions), run:
 
 ```powershell
 $env:PYTHONPATH = 'E:\Projects\AI Project Manager\src'
-& 'C:\Users\Rawr\Desktop\Codex Projects\Budget Tool\.venv\Scripts\python.exe' -m ai_efficiency.cli time-activity --project-root . --harness <codex-or-claude-code> --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
+& 'C:\Users\Rawr\AppData\Local\Python\pythoncore-3.14-64\python.exe' -m ai_efficiency.cli time-activity --project-root . --harness <codex-or-claude-code> --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
 ```
 
 Replace the harness placeholder. The command reads `.ai-efficiency.toml`; no session ID is
@@ -28,17 +28,17 @@ Owner `time out` runs only:
 
 ```powershell
 $env:PYTHONPATH = 'E:\Projects\AI Project Manager\src'
-& 'C:\Users\Rawr\Desktop\Codex Projects\Budget Tool\.venv\Scripts\python.exe' -m ai_efficiency.cli time-out --project-root . --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
+& 'C:\Users\Rawr\AppData\Local\Python\pythoncore-3.14-64\python.exe' -m ai_efficiency.cli time-out --project-root . --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
 ```
 
 After successful Execute Now completion (including checks and documentation), run:
 
 ```powershell
 $env:PYTHONPATH = 'E:\Projects\AI Project Manager\src'
-& 'C:\Users\Rawr\Desktop\Codex Projects\Budget Tool\.venv\Scripts\python.exe' -m ai_efficiency.cli time-complete --project-root . --workflow execute-now --outcome completed --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
+& 'C:\Users\Rawr\AppData\Local\Python\pythoncore-3.14-64\python.exe' -m ai_efficiency.cli time-complete --project-root . --workflow execute-now --outcome completed --db-path 'C:\Users\Rawr\AppData\Local\AI Efficiency\telemetry.sqlite3'
 ```
 
-After successful Publish Close (including the push, merge to `main`, and any portfolio delivery),
+After successful Publish Close (including only authorized publication and any permitted portfolio delivery),
 run the same command with `--workflow publish-close`. Run completion hooks near the end.
 Partial, failed, or interrupted work preserves timer state; never stop early or claim success.
 The next meaningful owner-linked project activity automatically starts another interval,

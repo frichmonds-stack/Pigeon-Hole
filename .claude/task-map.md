@@ -47,8 +47,8 @@ Route work to the smallest relevant set of files and docs. Don't read everything
 
 When information conflicts, prefer in this order:
 
-1. Current local code and working-tree evidence
-2. The task the owner has explicitly authorised in this session
+1. Current owner authority and command boundaries (`../ai/command-profile.json`)
+2. Current local code and working-tree evidence within the owner-authorized scope
 3. `DECISIONS.md` (accepted decisions)
 4. `current-state.md`
 5. `CLAUDE.md` architecture notes and route-specific docs (`schema.md`, `deploy.md`, `tool-review-architecture.md`)

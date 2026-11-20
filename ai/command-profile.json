@@ -1,6 +1,17 @@
 {
   "schema_version": 1,
+  "contract_ref": "E:/Projects/AI Project Manager/ai/procedures/commands.json",
   "project_id": "ai-explore",
   "project_root": "E:/Projects/Pigeon Hole",
-  "contract_ref": "E:/Projects/AI Project Manager/ai/procedures/commands.json"
+  "telemetry": {
+    "procedure": ".claude/owner-time.md",
+    "python": "C:/Users/Rawr/AppData/Local/Python/pythoncore-3.14-64/python.exe",
+    "db_path": "C:/Users/Rawr/AppData/Local/AI Efficiency/telemetry.sqlite3",
+    "planning_exception": true,
+    "subagents_skip": true
+  },
+  "notion": {
+    "requires_matching_committed_opt_in": true,
+    "currently_enabled": false
+  }
 }

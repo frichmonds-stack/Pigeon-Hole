@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Session Start
 Always run before doing any work:
-```bash
-git fetch origin claude/amazing-carson-5zucgf
-git pull origin claude/amazing-carson-5zucgf
-git status
-git log --oneline -5
+```powershell
+Get-Location
+git rev-parse --show-toplevel
+git status --short
+git branch --show-current
 ```
 
 Then verify the Git root is exactly `E:/Projects/Pigeon Hole`.
@@ -125,8 +125,9 @@ The state behind those facets — one value per facet key, the Domain→Work typ
 
 ## Session closeout (Notion Work Queue)
 
-Pigeon Hole is a managed project in the **Work Queue** database in Notion, under the *AI Project Manager* page. At every `Normal Close` and `Publish Close`, update it through the Notion connector. The procedure, the identity rules, and the "what must never go up" list are in [`.claude/close-out.md`](.claude/close-out.md) → "Notion Work Queue"; the permanent Sync Keys are in [`.claude/portfolio-identities.md`](.claude/portfolio-identities.md).
-
-The repository stays authoritative for code, docs, decisions and detailed next actions. Notion carries a curated portfolio summary only.
-
-**Not the CLI.** The `ai-project-manager` / `ai-efficiency` CLI (`frichmonds-stack/AI-Efficiency`) is Windows-only Python requiring 3.12+, and is not installed on this Mac — the previous instruction to run `ai-efficiency closeout` here could never have succeeded. There is no local outbox, so report failed delivery honestly rather than assuming a retry.
+Notion writes are disabled: the identity config has no committed `notion_sync = true` opt-in.
+Do not write through the connector or invoke sync/import as a closeout substitute.
+`ai-explore` / `Pigeon Hole` remain the stable identity. Preserve existing Sync Keys.
+Any future delivery requires matching owner-approved opt-in in committed HEAD and the narrow
+AI Project Manager work-management closeout whitelist; no schema/view changes or raw technical data.
+Procedure: `.claude/close-out.md`.
